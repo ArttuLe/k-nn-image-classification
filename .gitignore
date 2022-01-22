@@ -100,7 +100,8 @@ celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
-
+#MNIST data
+data/*
 # Environments
 .env
 .venv
