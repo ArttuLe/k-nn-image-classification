@@ -13,8 +13,7 @@ class KNN():
         return distances
 
 
-    #Calculate the euclidean distances against the test data and pick the k nearest neighbours
-    def k_nearest_neighbours(image_to_predict,k,distances):
+    def k_nearest_neighbours(k,distances):
 
         indexes = []
         heapify(indexes)

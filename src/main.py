@@ -15,7 +15,7 @@ def main():
 
     dist = KNN.calculate_distances(predict,data.train_images[:600])
 
-    indexes = KNN.k_nearest_neighbours(predict,2,dist)
+    indexes = KNN.k_nearest_neighbours(2,dist)
 
     k_nn = {}
     for j in indexes:
@@ -23,7 +23,7 @@ def main():
             k_nn[int(data.train_labels[j])] = 1
         else:
             k_nn[int(data.train_labels[j])] += 1
-            
+
     prediction = max(k_nn, key=k_nn.get)
 
     print("Real num: ",num ," prediction: ",prediction)
