@@ -26,8 +26,8 @@ The algorithm receives hand written digits from the MNIST-database as input, whe
 
 ## Sources
 
--[Modified Hausdorff distance for object matching](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.1.8155&rank=5&q=hausdorff&osm=&ossid=)
--[K-Nearest Neighbour](http://scholarpedia.org/article/K-nearest_neighbor)
--[Comparing images using the Hausdorff distance](https://people.eecs.berkeley.edu/~malik/cs294/Huttenlocher93.pdf)
--[Euclidean distance](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.680.2097&rep=rep1&type=pdf)
+- [Modified Hausdorff distance for object matching](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.1.8155&rank=5&q=hausdorff&osm=&ossid=)
+- [K-Nearest Neighbour](http://scholarpedia.org/article/K-nearest_neighbor)
+- [Comparing images using the Hausdorff distance](https://people.eecs.berkeley.edu/~malik/cs294/Huttenlocher93.pdf)
+- [Euclidean distance](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.680.2097&rep=rep1&type=pdf)
 More to come...
