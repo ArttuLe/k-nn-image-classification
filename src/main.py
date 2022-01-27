@@ -1,43 +1,37 @@
+import numpy as np
+from matplotlib import pyplot as plt
+
 from data import Data
 from knn import KNN
-from matplotlib import pyplot as plt
-import numpy as np
+from distance import Distance
 
 
 def main():
     
     data = Data()
 
-    correct = 0
-    n = 10
-    predict = data.test_images[0]
-    num = data.test_labels[0]
+    threshold = 70
+    train_size = 100
+    test_size = 20
 
-    dist = KNN.calculate_distances(predict,data.train_images[:600])
+    train_labels = data.train_labels[:train_size]
+    test_labels = data.test_labels[:test_size]
 
-    indexes = KNN.k_nearest_neighbours(2,dist)
+    #shape from 1d array back to 28x28 images
+    train,test = data.shape_data(data.train_images[:train_size],data.test_images[:test_size])
 
-    k_nn = {}
-    for j in indexes:
-        if int(data.train_labels[j]) not in k_nn:
-            k_nn[int(data.train_labels[j])] = 1
-        else:
-            k_nn[int(data.train_labels[j])] += 1
-
-    prediction = max(k_nn, key=k_nn.get)
-
-    print("Real num: ",num ," prediction: ",prediction)
-    if prediction == num:
-        correct += 1
-
-        #image = np.array(predict)
-        #image = image.reshape(28,28)
-
-        #plt.imshow(image)
-        #plt.title(('Prediction: {}').format(prediction))
-        #plt.show()
-
-    print("Accuracy: ",(correct/n)*100," %")
+    #transform pixels from range 0-255 to 0,1 where 0 is white 1 is black
+    train_bool,test_bool = data.boolean_data(train,test,threshold)
+    image_test = test[5]
+    image_train = train[6]
+    Distance().calculate_distances(image_test,image_train)
+    
+    #plt.imshow(image_train, interpolation='none')
+    #plt.title(int(train_labels[6]))
+    #plt.show()
+    #plt.imshow(image_test, interpolation='none')
+    #plt.title(int(test_labels[5]))
+    #plt.show()
     
 
 

@@ -1,37 +1,7 @@
-from heapq import heapify, heappush, heappop
 from distance import Distance
 
 class KNN():
 
-    def calculate_distances(image_to_predict,images):
+    def k_nearest_neighbours(test_image, train_set):
 
-        distances = []
-
-        for image in images:
-            distances.append(Distance.euclidean_distance(image_to_predict,image))
-
-        return distances
-
-
-    def k_nearest_neighbours(k,distances):
-
-        indexes = []
-        heapify(indexes)
-
-        
-        for i in range(len(distances)):
-            if len(indexes) < k:
-                heappush(indexes,i)
-            elif distances[i] < distances[indexes[0]] and len(indexes) >= k:
-                heappop(indexes)
-                heappush(indexes, i)
-
-        return indexes
-
-    def cross_validation():
         pass
-
-
-
-
-
