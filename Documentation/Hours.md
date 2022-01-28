@@ -13,7 +13,8 @@ Date       | time | target |
 
 Date       | time | target |
 -----------|------|--------|
-2022-01-24 | xh   |  |
-2022-01-25 | xh   |  |
-2022-01-26 | xh   |  |
-2022-01-27 | xh   |  |
+2022-01-24 | 0h   |  |
+2022-01-25 | 0h   |  |
+2022-01-26 | 1h   |  |
+2022-01-27 | 3h   |  Reworking the distance calculations|
+2022-01-28 | 4h   |  Reworked the distance calculations and did some testing. achieved 85% accuracy with 500 training set and 20 test images|
