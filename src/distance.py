@@ -1,20 +1,27 @@
 import numpy as np
+from heapq import heappush,heappop,heapify
 
 
 
 
 class Distance():
 
-    #closest pixel for a in B
+    #closest pixel for point a in pointset B
     def distance(self,point, point_set_B):
         j = point[1]
         i = point[0]
-        print(i,",", j)
-        print(point_set_B)
+
+        distances = []
+        heapify(distances)
+
+        for b in point_set_B:
+            dist = np.sqrt(((b[0]-i)**2) + ((b[1]-j)**2))
+            heappush(distances,dist)
+        closest = heappop(distances)
+
+        return closest
         
 
-        
-    
     #sum of distances for every pixel in A to B
     def calculate_distances(self,image_test,image_train):
 
@@ -33,7 +40,7 @@ class Distance():
 
         sum = sum_a+sum_b
 
-        return print(sum)
+        return sum
 
 
     #get coordinates for pixels that are black in an image.
