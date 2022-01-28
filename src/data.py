@@ -34,7 +34,6 @@ class Data():
         for a in range(len(train_data)):
             for i in range(28):
                 for j in range(28):
-                    print(int((a/len(train_data)*100)), "%", end="\r")
                     if train_data[a][i][j] < threshold:
                         train_data[a][i][j] = 0
                     elif train_data[a][i][j] >= threshold:
@@ -44,7 +43,6 @@ class Data():
         for a in range(len(test_data)):
             for i in range(28):
                 for j in range(28):
-                    print(int((a/len(test_data)*100)), "%", end="\r")
                     if test_data[a][i][j] < threshold:
                         test_data[a][i][j] = 0
                     elif test_data[a][i][j] >= threshold:

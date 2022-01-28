@@ -7,10 +7,10 @@ class KNN():
 
         neighbours = []
         heapify(neighbours)
-
+        test_coordinates = Distance().get_black_pixels(test_image)
+        
         for i in range(len(train_set)):
-            print(int((i/len(train_set)*100)), "%", end="\r")
-            dist = Distance().calculate_distances(test_image,train_set[i])
+            dist = Distance().calculate_distances(test_coordinates,train_set[i])
             heappush(neighbours,(dist,i))
 
         prediction = []

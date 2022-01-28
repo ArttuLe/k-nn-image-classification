@@ -27,7 +27,7 @@ class Distance():
 
         sum_a = 0
         sum_b = 0
-        test_coordinates = self.get_black_pixels(image_test)
+        test_coordinates = image_test
         train_coordinates = self.get_black_pixels(image_train)
 
         #sum for every a in A for B
@@ -54,35 +54,3 @@ class Distance():
                     coordinates.append((i,j))
 
         return coordinates
-
-
-
-#if image[i][j] == True:
-#            dist = 0
-#            return dist
-#        if image[i-1][j] == True:
-#            dist = 1
-#            return dist
-#        if image[i+1][j] == True:
-#            dist = 1
-#            return dist
-#        if image[i][j-1] == True:
-#            dist = 1
-#            return dist
-#        if image[i][j+1] == True:
-#            dist = 1
-#            return dist
-#        if image[i-1][j-1] == True:
-#            dist = np.sqrt(2)
-#            return dist
-#        if image[i+1][j+1] == True:
-#            dist = np.sqrt(2)
-#            return dist
-#        if image[i+1][j-1] == True:
-#            dist = np.sqrt(2)
-#            return dist
-#        if image[i-1][j+1] == True:
-#            dist = np.sqrt(2)
-#            return dist
-#        else:
-#            return
