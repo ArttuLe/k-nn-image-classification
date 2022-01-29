@@ -3,7 +3,7 @@ from distance import Distance
 
 class KNN():
 
-    def k_nearest_neighbours(test_image, train_set, k):
+    def k_nearest_neighbours(self,test_image, train_set, k):
 
         neighbours = []
         heapify(neighbours)

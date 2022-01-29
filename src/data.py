@@ -13,20 +13,12 @@ class Data():
 
         self.train_images = self.train_images.to_numpy()
         self.train_labels = self.train_labels.to_numpy()
-
         self.test_images = self.test_images.to_numpy()
         self.test_labels = self.test_labels.to_numpy()
 
+        self.train_images = self.train_images.reshape(len(self.train_images),28,28)
+        self.test_images = self.test_images.reshape(len(self.test_images),28,28)
 
-    def shape_data(self,train_data,test_data):
-
-        train_data = train_data.reshape(len(train_data),28,28)
-        test_data = test_data.reshape(len(test_data),28,28)
-
-        print("Training set: ", train_data.shape)
-        print("Testing set: ", test_data.shape)
-
-        return train_data,test_data
 
     def boolean_data(self, train_data, test_data, threshold):
 
