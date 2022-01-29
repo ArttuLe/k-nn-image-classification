@@ -13,8 +13,8 @@ def main():
     data = Data()
 
     threshold = 70
-    train_size = 500
-    test_size = 20
+    train_size = 10000
+    test_size = 25
 
     train_labels = data.train_labels[:train_size]
     test_labels = data.test_labels[:test_size]
