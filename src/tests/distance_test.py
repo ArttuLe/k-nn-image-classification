@@ -28,3 +28,13 @@ class TestDistance(unittest.TestCase):
         distance = Distance().distance(test_coordinates[0],test_coordinates)
 
         self.assertEqual(distance,0)
+
+    def test_get_black_pixels(self):
+
+        num = np.array([[0,0,1,0],
+                        [0,0,1,0],
+                        [0,0,1,0],
+                        [0,0,1,0]])
+        pixels = Distance().get_black_pixels(num)
+
+        self.assertEqual(pixels, [(0,2),(1,2),(2,2),(3,2)])
