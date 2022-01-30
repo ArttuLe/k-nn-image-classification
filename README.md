@@ -1,4 +1,5 @@
 ![GitHub Actions](https://github.com/ArttuLe/k-nn-image-classification/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/ArttuLe/k-nn-image-classification/branch/main/graph/badge.svg?token=HOK1MHQHXA)](https://codecov.io/gh/ArttuLe/k-nn-image-classification)
 # k-nn_image_classification
 k-nearest neighbours image classification project for Datastructures and Algorithms course at the University of Helsinki.
 
