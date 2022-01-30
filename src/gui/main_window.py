@@ -19,7 +19,8 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
     def __init__(self) -> None:
         super().__init__()
         self.setupUi(self)
-        self.predict = Prediction(Data(),KNN())
+        self.predict = Prediction(KNN())
+        self.data = Data()
 
         # Define widgets
 
@@ -38,10 +39,10 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
 
     def open_image(self):
         num = int(self.image.text())
-        image = self.predict.data.test_images[num]
+        image = self.data.test_images[num]
         image = image.reshape(28,28)
         image = image.astype(np.uint8)
-        image = QImage(image, image.shape[0],image.shape[1],QtGui.QImage.Format_RGB888)
+        image = QImage(image, 28,28,QtGui.QImage.Format_RGB888)
         
         pix_map = QPixmap(image)
         pix_map = pix_map.scaled(280,280, QtCore.Qt.KeepAspectRatio)
@@ -56,7 +57,9 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
         image = int(self.image.text())
         k = int(self.k_value.text())
 
-        ret = self.predict.predict(train_size, image, k)
+        ret = self.predict.predict(
+        self.data.train[:train_size], self.data.train_labels[:train_size], self.data.test[image], k
+        )
 
         self.return_label.setText(str(ret))
 

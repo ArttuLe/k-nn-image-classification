@@ -8,7 +8,7 @@ class KNN():
         neighbours = []
         heapify(neighbours)
         test_coordinates = Distance().get_black_pixels(test_image)
-        
+
         for i in range(len(train_set)):
             dist = Distance().calculate_distances(test_coordinates,train_set[i])
             heappush(neighbours,(dist,i))

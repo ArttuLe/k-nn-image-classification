@@ -1,9 +1,7 @@
-import numpy as np
 import pandas as pd
 
 class Data():
 
-    #Loads the data from csv files into numpy arrays
     def __init__(self):
         self.train_images = pd.read_csv('data/images.csv', header=None)
         self.train_labels = pd.read_csv('data/labels.csv', header=None)
@@ -19,26 +17,28 @@ class Data():
         self.train_images = self.train_images.reshape(len(self.train_images),28,28)
         self.test_images = self.test_images.reshape(len(self.test_images),28,28)
 
+        self.train,self.test = self.boolean_data(self.train_images, self.test_images, 70)
+
 
     def boolean_data(self, train_data, test_data, threshold):
 
 
-        for a in range(len(train_data)):
+        for n in range(len(train_data)):
             for i in range(28):
                 for j in range(28):
-                    if train_data[a][i][j] < threshold:
-                        train_data[a][i][j] = 0
-                    elif train_data[a][i][j] >= threshold:
-                        train_data[a][i][j] = 1
+                    if train_data[n][i][j] < threshold:
+                        train_data[n][i][j] = 0
+                    elif train_data[n][i][j] >= threshold:
+                        train_data[n][i][j] = 1
         print("Training data done...")
 
-        for a in range(len(test_data)):
+        for n in range(len(test_data)):
             for i in range(28):
                 for j in range(28):
-                    if test_data[a][i][j] < threshold:
-                        test_data[a][i][j] = 0
-                    elif test_data[a][i][j] >= threshold:
-                        test_data[a][i][j] = 1
+                    if test_data[n][i][j] < threshold:
+                        test_data[n][i][j] = 0
+                    elif test_data[n][i][j] >= threshold:
+                        test_data[n][i][j] = 1
         print("Test data done...")
 
         return train_data, test_data
