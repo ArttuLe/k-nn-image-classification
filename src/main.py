@@ -1,4 +1,5 @@
 import sys
+import threading
 
 from PyQt5.QtWidgets import QApplication
 
@@ -11,6 +12,7 @@ def main():
     app = QApplication(sys.argv)
     mainwindow = MainWindow()
     mainwindow.show()
+    mainwindow.process_data()
     app.exec_()
 
 if __name__ == "__main__":

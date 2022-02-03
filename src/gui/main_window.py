@@ -1,9 +1,10 @@
 from PyQt5 import QtGui
 from PyQt5 import QtCore
 from PyQt5.QtCore import QEvent, QModelIndex, QObject, QUrl, QThread, QObject
-from PyQt5.QtWidgets import QLineEdit, QListWidgetItem, QMainWindow, QMenu, QWidget, QPushButton, QSpinBox, QLabel
+from PyQt5.QtWidgets import QLineEdit, QListWidgetItem, QMainWindow, QFileDialog, QWidget, QPushButton, QSpinBox, QLabel
 from PyQt5.QtGui import QPixmap, QImage
 import numpy as np
+import os
 
 from knn import KNN
 from data import Data
@@ -20,41 +21,42 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
         super().__init__()
         self.setupUi(self)
         self.predict = Prediction(KNN())
-        self.data = Data()
 
         # Define widgets
-
+        self.statusbar.showMessage("Ready...")
         self.pred_button = self.findChild(QPushButton, "predict_button")
         self.k_value = self.findChild(QPushButton, "push_test")
         self.train_size = self.findChild(QLineEdit, "training_set_size")
-        self.image = self.findChild(QLineEdit, "line_image")
         self.k_value = self.findChild(QSpinBox, "k_value")
         self.image_label = self.findChild(QLabel, "label")
         self.return_label = self.findChild(QLabel, "return_label")
         self.open_button = self.findChild(QPushButton, "open_button")
-        self.state = self.findChild(QLabel, "state_label")
 
         self.open_button.clicked.connect(self.open_image)
         self.pred_button.clicked.connect(self.predict_image)
 
     def open_image(self):
-        num = int(self.image.text())
-        image = self.data.test_images[num]
-        image = image.reshape(28,28)
-        image = image.astype(np.uint8)
-        image = QImage(image, 28,28,QtGui.QImage.Format_RGB888)
+        fname = QFileDialog.getOpenFileName(
+            self, "Open image", "/home/koulu/k-nn-image-classification/data/images/", "PNG Files (*.png)")
         
-        pix_map = QPixmap(image)
-        pix_map = pix_map.scaled(280,280, QtCore.Qt.KeepAspectRatio)
-        self.image_label.setPixmap(pix_map)
+        self.im_index = os.path.basename(fname[0])
+        self.im_index = self.im_index[:-4]
+
+        self.pixmap = QPixmap(fname[0])
+        self.pixmap = self.pixmap.scaled(280,280, QtCore.Qt.KeepAspectRatio)
+        self.image_label.setPixmap(self.pixmap)
+
+    def process_data(self):
+        self.data = Data()
+
 
     def predict_image(self):
         """
         Predicts image loaded on the gui
         """
-        
+        self.statusbar.showMessage("Predicting...")
         train_size = int(self.train_size.text())
-        image = int(self.image.text())
+        image = int(self.im_index)
         k = int(self.k_value.text())
 
         ret = self.predict.predict(
@@ -62,6 +64,7 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
         )
 
         self.return_label.setText(str(ret))
+        self.statusbar.showMessage("Ready...")
 
 
         

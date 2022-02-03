@@ -28,7 +28,6 @@ class Prediction():
         correct = 0
         start = time.time()
         for a in range(len(test_set)):
-            print(a,"/",len(test_set), end="\r")
 
             image_test = test_set[a]
             test_label = test_labels[a]
