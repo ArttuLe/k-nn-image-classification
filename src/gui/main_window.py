@@ -1,6 +1,6 @@
 from PyQt5 import QtGui
 from PyQt5 import QtCore
-from PyQt5.QtCore import QEvent, QModelIndex, QObject, QUrl, QThread, QObject
+from PyQt5.QtCore import QEvent, QModelIndex, QUrl, QThread, QObject, pyqtSignal
 from PyQt5.QtWidgets import QLineEdit, QListWidgetItem, QMainWindow, QFileDialog, QWidget, QPushButton, QSpinBox, QLabel
 from PyQt5.QtGui import QPixmap, QImage
 import numpy as np
@@ -31,6 +31,7 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
         self.image_label = self.findChild(QLabel, "label")
         self.return_label = self.findChild(QLabel, "return_label")
         self.open_button = self.findChild(QPushButton, "open_button")
+        self.progress = self.findChild(QLabel, "progress_label")
 
         self.open_button.clicked.connect(self.open_image)
         self.pred_button.clicked.connect(self.predict_image)
@@ -49,12 +50,14 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
     def process_data(self):
         self.data = Data()
 
+    def report_progress(self,n):
+        self.progress.setText("Progress: {n}/500")
+
 
     def predict_image(self):
         """
         Predicts image loaded on the gui
         """
-        self.statusbar.showMessage("Predicting...")
         train_size = int(self.train_size.text())
         image = int(self.im_index)
         k = int(self.k_value.text())
@@ -73,3 +76,16 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
         """
         Runs accuracy test on N testing images against M training images
         """
+        for i in range(500):
+            
+
+
+            self.report_progress(i+1)
+
+class Worker(QObject):
+    finished = pyqtSignal()
+    progress = pyqtSignal(int)
+
+    def run(self):
+        
+        self.finished.emit()

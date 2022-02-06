@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/asd/koulu/k-nn-image-classification/src/gui/components/mainwindow.ui'
+# Form implementation generated from reading ui file '/home/arttuleh/koulu/k-nn-image-classification/src/gui/components/mainwindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -54,6 +54,11 @@ class Ui_ImageClassifier(object):
         self.training_set_size = QtWidgets.QLineEdit(self.verticalLayoutWidget)
         self.training_set_size.setObjectName("training_set_size")
         self.formLayout.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.training_set_size)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.formLayout.setItem(6, QtWidgets.QFormLayout.FieldRole, spacerItem2)
+        self.progress_label = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.progress_label.setObjectName("progress_label")
+        self.formLayout.setWidget(7, QtWidgets.QFormLayout.SpanningRole, self.progress_label)
         self._2.addLayout(self.formLayout)
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(440, 60, 280, 280))
@@ -102,6 +107,7 @@ class Ui_ImageClassifier(object):
         self.open_button.setText(_translate("ImageClassifier", "Open"))
         self.kValueLabel.setText(_translate("ImageClassifier", "K value"))
         self.trainingSetSizeLabel.setText(_translate("ImageClassifier", "Training set size: "))
+        self.progress_label.setText(_translate("ImageClassifier", "Progress: "))
         self.push_test.setText(_translate("ImageClassifier", "Run accuracy test"))
         self.label_7.setText(_translate("ImageClassifier", "Output:"))
         self.menuHelp.setTitle(_translate("ImageClassifier", "Help"))
