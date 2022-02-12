@@ -7,6 +7,14 @@ k-nearest neighbours image classification project for Datastructures and Algorit
 ```sh
 poetry run invoke start
 ```
+## Start accuracy testing
+```sh
+poetry run invoke test
+```
+## Generate UI files
+```sh
+poetry run invoke qtgen
+```
 
 ## Links to documentation
 ### [Project definition](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Project_definition.md)
