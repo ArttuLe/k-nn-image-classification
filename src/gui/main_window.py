@@ -50,10 +50,6 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
     def process_data(self):
         self.data = Data()
 
-    def report_progress(self,n):
-        self.progress.setText("Progress: {n}/500")
-
-
     def predict_image(self):
         """
         Predicts image loaded on the gui
@@ -68,24 +64,3 @@ class MainWindow(QMainWindow, Ui_ImageClassifier):
 
         self.return_label.setText(str(ret))
         self.statusbar.showMessage("Ready...")
-
-
-        
-
-    def run_accuracy_test(self):
-        """
-        Runs accuracy test on N testing images against M training images
-        """
-        for i in range(500):
-            
-
-
-            self.report_progress(i+1)
-
-class Worker(QObject):
-    finished = pyqtSignal()
-    progress = pyqtSignal(int)
-
-    def run(self):
-        
-        self.finished.emit()

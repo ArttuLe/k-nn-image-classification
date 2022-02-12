@@ -22,3 +22,11 @@ def start(c):
     """
     main_path = os.path.join(source_dir, "main.py")
     c.run(f"python {main_path}")
+
+@task
+def test(c):
+    """
+    Start the accuracy testing program
+    """
+    test_path = os.path.join(source_dir, "main_accuracy.py")
+    c.run(f"python {test_path}")

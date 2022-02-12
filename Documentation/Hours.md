@@ -29,3 +29,14 @@ Date       | time | target |
 2022-02-4 | 4h   |File dialog for the images|
 2022-02-5 | 3h   |Developing and reading about threading for pyQT in order to run accuracy test without freezing gui|
 2022-02-6 | 3h   | Documentation and accuracy testing.|
+
+## Week 4
+
+Date       | time | target |
+-----------|------|--------|
+2022-02-8 | 0h   |  |
+2022-02-9 | 0h   |  |
+2022-02-10 | 3h   | Finishing up the GUI|
+2022-02-11 | 4h   | Separate terminal application for running accuracy tests without GUI|
+2022-02-12 | 4h   |Testing the accuracy with different k values|
+2022-02-13 | 3h   | Researching about how to optimize the computing in order to test with bigger training sets|
