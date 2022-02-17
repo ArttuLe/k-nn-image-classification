@@ -3,8 +3,6 @@ class Prediction():
 
     def __init__(self,knn):
         self.knn = knn
-        self.threshold = 70
-        self.test_size = 500
 
     def predict(self,train_set, train_labels, test_image, k_value):
 

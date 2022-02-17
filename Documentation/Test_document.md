@@ -23,8 +23,9 @@ Below are accuracy tests with different sized training sets and testing sets.
 Train set  | test set| K-value | Accuracy |
 -----------|---------|---------|----------|
 10000      | 500     |  3      |    96 %  |
-20000      | 1000     |  3      |    running %  |
-
+1000        | 120     |  3      |    86 %  |
+5000       | 120    |  3      |     92%  |
+5000       | 480    |  3      |     89%  |
 
 
 

@@ -14,7 +14,36 @@ class Distance():
 
         distances = []
         heapify(distances)
+        #check the surrounding and the same pixels before looping over the whole image
+        if point in point_set_b:
+            closest = 0
+            return closest
+        elif (i+1,j+1) in point_set_b:
+            closest = np.sqrt(2)
+            return closest
+        elif (i+1,j) in point_set_b:
+            closest = 1
+            return closest
+        elif (i-1,j) in point_set_b:
+            closest = 1
+            return closest
+        elif (i-1,j-1) in point_set_b:
+            closest = np.sqrt(2)
+            return closest
+        elif (i,j-1) in point_set_b:
+            closest = 1
+            return closest
+        elif (i,j+1) in point_set_b:
+            closest = 1
+            return closest
+        elif (i-1,j+1) in point_set_b:
+            closest = np.sqrt(2)
+            return closest
+        elif (i+1,j-1) in point_set_b:
+            closest = np.sqrt(2)
+            return closest
 
+        #Loop over the whole image if no pixel in surrounding area.                
         for b in point_set_b:
             dist = np.sqrt(((b[0]-i)**2) + ((b[1]-j)**2))
             heappush(distances,dist)
