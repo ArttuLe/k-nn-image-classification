@@ -27,3 +27,4 @@ poetry run invoke qtgen
 ### [Week 2](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Weekly_report_2.md)
 ### [Week 3](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Weekly_report_3.md)
 ### [Week 4](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Weekly_report_4.md)
+### [Week 5](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Weekly_report_5.md)
