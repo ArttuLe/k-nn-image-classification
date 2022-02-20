@@ -2,7 +2,7 @@
 
 - [Hours](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Hours.md)
 
-## Weekly report no. 3
+## Weekly report no. 4
 
 ### Things that i've done this week
 - Finished up the GUI and its now working as intended.

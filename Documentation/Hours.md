@@ -40,3 +40,14 @@ Date       | time | target |
 2022-02-11 | 4h   | Separate terminal application for running accuracy tests without GUI|
 2022-02-12 | 4h   |Testing the accuracy with different k values|
 2022-02-13 | 3h   | Researching about how to optimize the computing in order to test with bigger training sets|
+
+## Week 5
+
+Date       | time | target |
+-----------|------|--------|
+2022-02-15 | 0h   |  |
+2022-02-16 | 0h   |  |
+2022-02-17 | 4h   | Optimizing the distance calculations|
+2022-02-18 | 4h   | Implementing multiprocessing for the accuracy testing|
+2022-02-19 | 4h   |Testing with bigger datasets|
+2022-02-20 | 1.5h   | Updating documentation |

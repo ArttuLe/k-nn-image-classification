@@ -6,9 +6,7 @@
 
 ### Distance metrics
 
-
-
-### K-NN algorithm
+Distance calculations are the only tests that are run using the automated tools. Accuracy testing etc. are run using the testing version of the application.
 
 
 ### Manual accuracy testing
@@ -26,7 +24,7 @@ Train set  | test set| K-value | Accuracy |
 1000        | 120     |  3      |    86 %  |
 5000       | 120    |  3      |     92%  |
 5000       | 480    |  3      |     89%  |
-
+7500       | 720    |  3      |     90%  |
 
 
 
