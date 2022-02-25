@@ -25,8 +25,14 @@ Train set  | test set| K-value | Accuracy |
 5000       | 120    |  3      |     92%  |
 5000       | 480    |  3      |     89%  |
 7500       | 720    |  3      |     90%  |
-
-
+10000       | 1200    |  4      |     90%  |
+ .       | .    |  .      |     %  |
+ .       | .    |  .      |     %  |
+ .       | .    |  .      |     %  |
+ .       | .    |  .      |     %  |
+ .       | .    |  .      |     %  |
+ .       | .    |  .      |     %  |
+ .       | .    |  .      |     %  |
 
 Below tests for different k values on a small train set. Accuracy may differ with bigger train size, need to optimize the algorithm before further testing with bigger training size.
 
