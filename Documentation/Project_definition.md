@@ -30,4 +30,3 @@ The algorithm receives hand written digits from the MNIST-database as input, whe
 - [K-Nearest Neighbour](http://scholarpedia.org/article/K-nearest_neighbor)
 - [Comparing images using the Hausdorff distance](https://people.eecs.berkeley.edu/~malik/cs294/Huttenlocher93.pdf)
 - [Euclidean distance](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.680.2097&rep=rep1&type=pdf)
-More to come...
