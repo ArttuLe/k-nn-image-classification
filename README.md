@@ -3,6 +3,11 @@
 # k-nn_image_classification
 k-nearest neighbours image classification project for Datastructures and Algorithms course at the University of Helsinki.
 
+## Extract the data
+
+The data needed is located in a zip file in the resources directory.
+In order to run the program you need to extract the data folder from the zip file into the root directory.
+
 ## Start program
 ```sh
 poetry run invoke start
@@ -28,3 +33,4 @@ poetry run invoke qtgen
 ### [Week 3](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Weekly_report_3.md)
 ### [Week 4](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Weekly_report_4.md)
 ### [Week 5](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Weekly_report_5.md)
+### [Week 6](https://github.com/ArttuLe/k-nn-image-classification/blob/main/Documentation/Weekly_report_6.md)

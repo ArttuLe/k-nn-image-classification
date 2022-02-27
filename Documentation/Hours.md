@@ -51,3 +51,14 @@ Date       | time | target |
 2022-02-18 | 4h   | Implementing multiprocessing for the accuracy testing|
 2022-02-19 | 4h   |Testing with bigger datasets|
 2022-02-20 | 1.5h   | Updating documentation |
+
+## Week 6
+
+Date       | time | target |
+-----------|------|--------|
+2022-02-22 | 0h   |  |
+2022-02-23 | 0h   |  |
+2022-02-24 | 1h   | Setting up and running tests|
+2022-02-25 | 1h   |Setting up and running tests|
+2022-02-26 | 1h   |Setting up and running tests|
+2022-02-27 | 1h   | Going over the whole project and checking everything is fine |
