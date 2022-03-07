@@ -29,41 +29,29 @@ def main_accuracy():
     return_correct = manager.list()
 
     split = int(test_size)//6
-    print(split)
+
+    processes = []
+    num_of_processes = 6
     #Run the prediction on the test set and calculate the accuracy
 
-    p_1 = multiprocessing.Process(
-        target=parallel_prediction,
-        args=(knn,train_set, train_labels,test_set[:split],test_labels[:split],k_value, return_correct))
-    p_2 = multiprocessing.Process(
-        target=parallel_prediction,
-        args=(knn,train_set, train_labels,test_set[split:split*2],test_labels[split:split*2],k_value, return_correct))
-    p_3 = multiprocessing.Process(
-        target=parallel_prediction,
-        args=(knn,train_set, train_labels,test_set[split*2:split*3],test_labels[split*2:split*3],k_value, return_correct))
-    p_4 = multiprocessing.Process(
-        target=parallel_prediction,
-        args=(knn,train_set, train_labels,test_set[split*3:split*4],test_labels[split*3:split*4],k_value, return_correct))
-    p_5 = multiprocessing.Process(
-        target=parallel_prediction,
-        args=(knn,train_set, train_labels,test_set[split*4:split*5],test_labels[split*4:split*5],k_value, return_correct))
-    p_6 = multiprocessing.Process(
-        target=parallel_prediction,
-        args=(knn,train_set, train_labels,test_set[split*5:split*6],test_labels[split*5:split*6],k_value, return_correct))
+    #Initialize multiprocessing.
+    for p in range(1,num_of_processes+1):
+        if p == 1:
+            p = multiprocessing.Process(
+                    target=parallel_prediction,
+                    args=(knn,train_set, train_labels,test_set[:split],test_labels[:split],k_value, return_correct))
+            processes.append(p)
+        else:
+            p = multiprocessing.Process(
+                target=parallel_prediction,
+                args=(knn,train_set, train_labels,test_set[split*(p-1):split*p],test_labels[split*(p-1):split*p],k_value, return_correct))
+            processes.append(p)
 
-    p_1.start()
-    p_2.start()
-    p_3.start()
-    p_4.start()
-    p_5.start()
-    p_6.start()
+    for process in processes:
+        process.start()
 
-    p_1.join()
-    p_2.join()
-    p_3.join()
-    p_4.join()
-    p_5.join()
-    p_6.join()
+    for process in processes:
+        process.join()
 
     elapsed_time = time.time()-start
     print(elapsed_time," Seconds.")

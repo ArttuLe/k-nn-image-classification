@@ -1,7 +1,6 @@
 
 ## Implementation of the project
 
-## IN PROGRESS...
 
 ### General structure of the project
 
@@ -29,6 +28,11 @@ The accuracy of the application is highly dependant on the size of the data bein
 
 ### Possible improvements
 
+Improve the algorithm and the time it takes to finish computation on a single image in order to test on bigger datasets.
+
+Improve the UI of the program.
+
+Implement different distance calculations to compare the accuracy.
 
 
 

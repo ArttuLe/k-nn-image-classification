@@ -7,7 +7,10 @@ import numpy as np
 
 class Distance():
 
+
     #closest pixel for point a in pointset B
+    # point - one pixel in the testing image
+    # point_set_b - one image in the training set
     def distance(self,point, point_set_b):
         j = point[1]
         i = point[0]
@@ -53,6 +56,8 @@ class Distance():
 
 
     #sum of distances for every pixel in A to B
+    # image_test is the image that is tested against every image in the training data
+    # image_train is one of the training images in the training set
     def calculate_distances(self,image_test,image_train):
 
         sum_a = 0
