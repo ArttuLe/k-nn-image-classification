@@ -35,17 +35,18 @@ def main_accuracy():
     #Run the prediction on the test set and calculate the accuracy
 
     #Initialize multiprocessing.
-    for p in range(1,num_of_processes+1):
-        if p == 1:
-            p = multiprocessing.Process(
+    for proc in range(1,num_of_processes+1):
+        if proc == 1:
+            proc = multiprocessing.Process(
                     target=parallel_prediction,
                     args=(knn,train_set, train_labels,test_set[:split],test_labels[:split],k_value, return_correct))
-            processes.append(p)
+            processes.append(proc)
         else:
-            p = multiprocessing.Process(
+            proc = multiprocessing.Process(
                 target=parallel_prediction,
-                args=(knn,train_set, train_labels,test_set[split*(p-1):split*p],test_labels[split*(p-1):split*p],k_value, return_correct))
-            processes.append(p)
+                args=(knn,train_set, train_labels,test_set[split*(proc-1):split*proc],
+                test_labels[split*(proc-1):split*proc],k_value, return_correct))
+            processes.append(proc)
 
     for process in processes:
         process.start()
